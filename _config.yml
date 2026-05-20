@@ -8,10 +8,11 @@ url: ""
 organization:
   name: IAIRO
   website: https://iairo.ai/
+  newsletter: https://www.linkedin.com/newsletters/align-with-iairo-7456981725294804992/
   tagline: Indian AI Research Organisation
   research_focus: "Pharma, Health, Sustainability, and Education"
   location: Gift City, Gujarat, India
-  mission: "Build foundational and applied AI for India's most critical sectors, bridge researchers and industry, and deploy prototypes to production-scale solutions."
+  mission: "IAIRO is pioneering new types of sovereign AI for India. From Consumer AI to Enterprise AI. From Big AI to Small AI."
   logo: /assets/images/IAIRO.jpeg
 
 hero:
