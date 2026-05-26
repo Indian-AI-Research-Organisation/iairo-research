@@ -2,6 +2,7 @@
 title: Smart Pilot for Drug Manufacturing
 summary: The Pharma Manufacturing Intelligence Platform is an AI-driven system designed to improve monitoring, diagnosis, forecasting, and operational decision-making in pharmaceutical manufacturing environments. The platform combines anomaly detection, causal root cause analysis, predictive forecasting, and document-based knowledge retrieval into a single integrated workflow.
 area: Smart Manufacturing, Pharma
+project_image: /assets/images/PharmaDrugManufacturing.png
 status: active
 featured: false
 duration: 2026 - Present
