@@ -9,10 +9,14 @@ papers:
         - title: "CausalPulse: An Industrial-Grade Neurosymbolic Multi-Agent Copilot for Causal Diagnostics in Smart Manufacturing"
           authors: "Shyalika, C., Jaimini, U., Henson, C. and Sheth, A."
           venue: "AAAI MAKE Spring Symposium, 2026"
+          url: "https://arxiv.org/abs/2603.29755"
+          video_url: "https://youtu.be/SbL8rSRziSA"
 
         - title: "IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance"
           authors: "Shyalika, C., Patel, D.C. and Sheth, A."
           venue: "64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) — Industry Track"
+          url: "https://arxiv.org/abs/2604.23446"
+          video_url: "https://youtu.be/sKAtz2arCvg"
 
   enterprise-ai:
   foundation-ai:
@@ -29,10 +33,12 @@ papers:
         - title: "SOFAI-DT: Return-Conditioned Control for Efficient Verified Reasoning"
           authors: "Rahul Maity, Vedant Khandelwal, Amit Sheth"
           venue: "COLM 2026 Workshop on Efficient Reasoning"
+          video_url: "https://youtu.be/f2roNvoFSM4"
 
         - title: "MED-EVAL: Clinical Fact Alignment for Efficient Medical Reasoning"
           authors: "Rishit Agarwal, Vedant Khandelwal, Amit Sheth"
           venue: "COLM 2026 Workshop on Efficient Reasoning"
+          video_url: "https://youtu.be/FCRViednWvE"
 
         - title: "Neuro-symbolic PRM: Enhancing Scientific Reasoning via Structured Traces and Symbolic Verification"
           authors: "Zi, Y., Xu, C., Bhattacharya, S., Foltin, M., Sheth, A."
@@ -41,6 +47,8 @@ papers:
         - title: "Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement"
           authors: "R. Marwah, R. Garimella, V. Pallagani, A. Jain, M. Stewart, A. Sheth"
           venue: "43rd International Conference on Machine Learning (ICML 2026), Seoul, South Korea"
+          url: "https://arxiv.org/abs/2605.30981"
+          video_url: "https://youtu.be/UUZTYiBlrTw"
 
         - title: "One Size Does Not Fit All: Revisiting World Models and Neurosymbolic AI"
           authors: "Amit Sheth, Madhur Thareja, Anushka Pawar, Niyati Rawal"
@@ -49,16 +57,21 @@ papers:
         - title: "LiveSpec: A Tiered Runtime for Planning under Live-Editable Constraints"
           authors: "Vedant Khandelwal, Prateek Biswas, Amit Sheth"
           venue: "ICAPS 2026"
+          url: "https://icaps26.icaps-conference.org/files/demos/icaps26-demo_paper_9.pdf"
+          video_url: "https://youtu.be/etoUAdTtk9s"
 
         - title: "Where Should Knowledge Enter? A Layered Framework for Knowledge Infusion in Multimodal Iterative Generative Model"
           authors: "Renjith Prasad, Chathurangi Shyalika, Anushka Pawar, Amit Sheth"
           venue: "2nd Workshop on Knowledge-Intensive Multimodal Reasoning, CVPR 2026"
           url: "https://arxiv.org/abs/2606.06356"
           abstract: "To be published in IEEE Intelligent Systems."
+          video_url: "https://youtu.be/bGMhWdxsOBk"
 
         - title: "Toward Neurosymbolic Reinforcement Learning via Editable Specifications"
           authors: "Vedant Khandelwal, Hong Yung Yip, Amit Sheth"
           venue: "AAAI MAKE Spring Symposium, Proceedings of the AAAI Symposium Series, Vol. 8, No. 1, pp. 603–607, 2026"
+          url: "https://ojs.aaai.org/index.php/AAAI-SS/article/view/42594"
+          video_url: "https://youtu.be/fooU6YoNUFs"
 
 # Usage in Jekyll:
 # {% for year in site.data.papers.papers[project_id] | sort | reverse %}
