@@ -2,8 +2,6 @@
 ---
 
 :root {
-  --wiki-bg: #1f271b;
-  --wiki-bg-alt: #e9eef4;
   --wiki-surface: #fffcf7;
   --wiki-surface-strong: #ffffff;
   --wiki-border: #14233a24;
@@ -33,9 +31,7 @@ body {
 }
 
 body {
-  /* Option B — dark olive canvas (~30% lighter than #1f271b, still clearly brand green) */
-  /* Option C — keep #1f271b here and rely on the shell shadow below for the buffer */
-  background: #2e3d27;
+  background: var(--wiki-surface);
   color: var(--wiki-ink);
   font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", Times, serif;
   font-size: 16px;
@@ -73,7 +69,7 @@ button:focus-visible {
   color: #fff;
   font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
   text-decoration: none;
 }
@@ -127,22 +123,8 @@ button:focus-visible {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Option C — warm lateral rim shadow on content panels.
-   Swap the box-shadow value below to "none" to disable.
-   Works best with body background: #1f271b (the darker canvas). */
-.wiki-header,
-.wiki-sidebar,
-.wiki-main,
-.wiki-footer {
-  --panel-rim: -24px 0 32px -12px rgba(20, 32, 15, 0.55),
-               24px 0 32px -12px rgba(20, 32, 15, 0.55);
-}
-
 .wiki-header {
-  background: #fffcf7;
-  border: 1px solid var(--wiki-border-light);
-  border-top: 0;
-  box-shadow: var(--wiki-shadow), var(--panel-rim);
+  border-bottom: 1px solid var(--wiki-border-light);
   min-height: 68px;
   display: flex;
   align-items: center;
@@ -220,7 +202,7 @@ button:focus-visible {
 
 .wiki-search-title {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .wiki-search-snippet {
@@ -289,13 +271,10 @@ button:focus-visible {
   gap: 0;
   align-items: stretch;
   margin-top: 18px;
-  box-shadow: var(--panel-rim);
 }
 
 .wiki-sidebar {
-  border: 1px solid var(--wiki-border-light);
-  border-top: 0;
-  background: linear-gradient(180deg, #f5f1e8, #ede8dc);
+  border-right: 1px solid var(--wiki-border-light);
   padding: 14px 10px;
   align-self: stretch;
 }
@@ -311,7 +290,7 @@ button:focus-visible {
   color: var(--wiki-muted);
   font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .sidebar-box ul {
@@ -320,15 +299,29 @@ button:focus-visible {
 }
 
 .sidebar-box li {
-  margin: 4px 0;
-  font-size: 13px;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.sidebar-box li a:visited {
+  color: var(--wiki-link);
+}
+
+.sidebar-box li a.is-current {
+  display: inline-block;
+  margin-left: -7px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--wiki-accent-soft);
+  color: var(--wiki-accent-strong);
+  font-weight: 700;
+}
+
+.sidebar-box li a.is-current:hover {
+  text-decoration: none;
 }
 
 .wiki-main {
-  border: 1px solid var(--wiki-border-light);
-  border-top: 0;
-  border-left: 0;
-  background: #fffcf7;
   min-height: calc(100vh - 110px);
   padding: 24px 32px 32px;
 }
@@ -349,7 +342,7 @@ button:focus-visible {
 .wiki-article h3 {
   color: var(--wiki-heading);
   font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Times, serif;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .wiki-article h1 {
@@ -401,6 +394,8 @@ button:focus-visible {
 
 .home-hero h1 {
   margin: 0 0 12px;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .section-eyebrow,
@@ -444,7 +439,7 @@ button:focus-visible {
   min-height: 44px;
   font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -709,7 +704,7 @@ button:focus-visible {
   display: block;
   margin-top: 4px;
   color: var(--wiki-ink);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .project-meta-link {
@@ -779,10 +774,7 @@ button:focus-visible {
 
 .wiki-footer {
   margin-top: 0;
-  border: 1px solid var(--wiki-border-light);
   border-top: 1px solid var(--wiki-border-light);
-  background: linear-gradient(180deg, #f8fafc, #eff3f5);
-  box-shadow: var(--panel-rim);
   padding: 20px 20px 24px;
   color: var(--wiki-muted);
   font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
@@ -934,7 +926,7 @@ button:focus-visible {
   content: "▸ Show instructions";
   font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--wiki-link);
 }
 
@@ -944,7 +936,7 @@ details[open] .author-instructions-summary::after {
 
 .author-instructions-title {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--wiki-heading);
   font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Times, serif;
 }
@@ -983,7 +975,7 @@ details[open] .author-instructions-summary::after {
   font-size: 15px;
   color: var(--wiki-muted);
   font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   border-bottom: 1px solid var(--wiki-border-light);
@@ -1054,6 +1046,45 @@ details[open] .author-instructions-summary::after {
 }
 
 /* Publications section */
+.view-toggle {
+  display: inline-flex;
+  gap: 6px;
+  margin: 4px 0 20px;
+}
+
+.view-toggle button {
+  appearance: none;
+  border: 1px solid var(--wiki-border);
+  background: transparent;
+  color: var(--wiki-muted);
+  font-family: "Helvetica Neue", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.view-toggle button:hover {
+  border-color: var(--wiki-border-strong);
+}
+
+.view-toggle button.is-active {
+  background: var(--wiki-accent-strong);
+  border-color: var(--wiki-accent-strong);
+  color: #fff;
+}
+
+.view-panel {
+  display: none;
+}
+
+.view-panel.is-active {
+  display: block;
+}
+
 .papers-list {
   margin: 12px 0;
 }
@@ -1067,11 +1098,19 @@ details[open] .author-instructions-summary::after {
   page-break-inside: avoid;
 }
 
-.paper-title {
+.papers-list .paper-title {
   margin: 0 0 4px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.4;
+}
+
+.papers-list .paper-meta {
+  margin: 4px 0;
+}
+
+.papers-list .paper-abstract {
+  margin: 6px 0 0;
 }
 
 .paper-title a {

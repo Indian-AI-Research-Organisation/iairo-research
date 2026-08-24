@@ -7,6 +7,7 @@ status: active
 featured: false
 duration: 2026 - Present
 order: 21
+paper_key: pharma-manufacturing
 contact: rajarshi.roy@iairo.ai
 
 ---

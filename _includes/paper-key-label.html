@@ -1,0 +1,6 @@
+{% case include.key %}
+  {% when 'foundation-ai' %}Foundation AI
+  {% when 'enterprise-ai' %}Enterprise AI
+  {% when 'sustainability' %}Sustainability
+  {% else %}{{ include.key | replace: '-', ' ' | capitalize }}
+{% endcase %}

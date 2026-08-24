@@ -4,58 +4,189 @@ title: Publications
 ---
 
 <article class="wiki-article">
-  <h1>Publications by Project</h1>
-  <p class="wiki-jump">Year-wise publications mapped to each research project.</p>
+  <h1>Publications</h1>
+  <p class="wiki-jump">All IAIRO publications — browse grouped by research project, or in one reverse-chronological timeline.</p>
 
-  <div class="wiki-toc">
-    <h2>Project Index</h2>
-    <ul>
-      {% for project in site.projects %}
-        {% assign paper_key = project.paper_key | default: project.slug %}
-        <li><a href="#{{ paper_key }}">{{ project.title }}</a></li>
-      {% endfor %}
-    </ul>
+  <div class="view-toggle" role="tablist" aria-label="Publications view">
+    <button type="button" class="is-active" data-target="view-project" role="tab" aria-selected="true">By Project</button>
+    <button type="button" data-target="view-timeline" role="tab" aria-selected="false">Timeline</button>
   </div>
 
-  {% for project in site.projects %}
-    {% assign paper_key = project.paper_key | default: project.slug %}
-    {% assign project_papers = site.data.papers.papers[paper_key] %}
+  <div class="view-panel is-active" id="view-project" role="tabpanel">
 
-    <section id="{{ paper_key }}">
-      <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
-      <p>
-        {% if project.area %}{{ project.area }}{% endif %}
-        {% if project.duration %} · {{ project.duration }}{% endif %}
-      </p>
+    {% assign covered_keys = "" %}
+    {% for project in site.projects %}
+      {% assign pk = project.paper_key | default: project.slug %}
+      {% assign covered_keys = covered_keys | append: pk | append: "," %}
+    {% endfor %}
 
-      {% if project_papers %}
-        {% assign by_year = project_papers | sort: 'year' | reverse %}
-        {% for year_block in by_year %}
-          <h3>{{ year_block.year }}</h3>
-          <div class="papers-list">
-            {% for paper in year_block.items %}
-              <article class="paper-entry">
-                <h3 class="paper-title">
-                  {% if paper.url %}
-                    <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
-                  {% else %}
-                    {{ paper.title }}
-                  {% endif %}
-                </h3>
-                <p class="paper-meta">
-                  <span class="paper-authors">{{ paper.authors }}</span> —
-                  <span class="paper-venue"><em>{{ paper.venue }}</em></span>
-                </p>
-                {% if paper.abstract %}
-                  <p class="paper-abstract">{{ paper.abstract }}</p>
-                {% endif %}
-              </article>
-            {% endfor %}
-          </div>
+    <div class="wiki-toc">
+      <h2>Project Index</h2>
+      <ul>
+        {% for project in site.projects %}
+          {% assign paper_key = project.paper_key | default: project.slug %}
+          <li><a href="#{{ paper_key }}">{{ project.title }}</a></li>
         {% endfor %}
-      {% else %}
-        <p>No publications listed yet for this project.</p>
-      {% endif %}
-    </section>
-  {% endfor %}
+        {% for group in site.data.papers.papers %}
+          {% assign key = group[0] %}
+          {% assign needle = key | append: "," %}
+          {% unless covered_keys contains needle %}
+            {% if group[1] %}
+              <li><a href="#{{ key }}">{% include paper-key-label.html key=key %}</a></li>
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% for project in site.projects %}
+      {% assign paper_key = project.paper_key | default: project.slug %}
+      {% assign project_papers = site.data.papers.papers[paper_key] %}
+
+      <section id="{{ paper_key }}">
+        <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+        <p>
+          {% if project.area %}{{ project.area }}{% endif %}
+          {% if project.duration %} · {{ project.duration }}{% endif %}
+        </p>
+
+        {% if project_papers %}
+          {% assign by_year = project_papers | sort: 'year' | reverse %}
+          {% for year_block in by_year %}
+            <h3>{{ year_block.year }}</h3>
+            <div class="papers-list">
+              {% for paper in year_block.items %}
+                <article class="paper-entry">
+                  <h3 class="paper-title">
+                    {% if paper.url %}
+                      <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
+                    {% else %}
+                      {{ paper.title }}
+                    {% endif %}
+                  </h3>
+                  <p class="paper-meta">
+                    <span class="paper-authors">{{ paper.authors }}</span> —
+                    <span class="paper-venue"><em>{{ paper.venue }}</em></span>
+                    {% if paper.video_url %}
+                      · <span class="paper-video"><a href="{{ paper.video_url }}" target="_blank" rel="noopener">▶ Watch</a></span>
+                    {% endif %}
+                  </p>
+                  {% if paper.abstract %}
+                    <p class="paper-abstract">{{ paper.abstract }}</p>
+                  {% endif %}
+                </article>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No publications listed yet for this project.</p>
+        {% endif %}
+      </section>
+    {% endfor %}
+
+    {% for group in site.data.papers.papers %}
+      {% assign key = group[0] %}
+      {% assign project_papers = group[1] %}
+      {% assign needle = key | append: "," %}
+      {% unless covered_keys contains needle %}
+        {% if project_papers %}
+          <section id="{{ key }}">
+            <h2>{% include paper-key-label.html key=key %}</h2>
+            <p>Not yet tied to a project page.</p>
+
+            {% assign by_year = project_papers | sort: 'year' | reverse %}
+            {% for year_block in by_year %}
+              <h3>{{ year_block.year }}</h3>
+              <div class="papers-list">
+                {% for paper in year_block.items %}
+                  <article class="paper-entry">
+                    <h3 class="paper-title">
+                      {% if paper.url %}
+                        <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
+                      {% else %}
+                        {{ paper.title }}
+                      {% endif %}
+                    </h3>
+                    <p class="paper-meta">
+                      <span class="paper-authors">{{ paper.authors }}</span> —
+                      <span class="paper-venue"><em>{{ paper.venue }}</em></span>
+                      {% if paper.video_url %}
+                        · <span class="paper-video"><a href="{{ paper.video_url }}" target="_blank" rel="noopener">▶ Watch</a></span>
+                      {% endif %}
+                    </p>
+                    {% if paper.abstract %}
+                      <p class="paper-abstract">{{ paper.abstract }}</p>
+                    {% endif %}
+                  </article>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </section>
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+
+  </div>
+
+  <div class="view-panel" id="view-timeline" role="tabpanel">
+    {% assign papers = site.data.timeline | sort: 'date' | reverse %}
+    {% assign current_year = "" %}
+    <div class="papers-list">
+      {% for paper in papers %}
+        {% assign paper_year = paper.date | slice: 0, 4 %}
+        {% if paper_year != current_year %}
+          {% assign current_year = paper_year %}
+          <h2>{{ paper_year }}</h2>
+        {% endif %}
+        <article class="paper-entry">
+          <h3 class="paper-title">
+            {% if paper.url %}
+              <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
+            {% else %}
+              {{ paper.title }}
+            {% endif %}
+          </h3>
+          <p class="paper-meta">
+            <span class="paper-authors">{{ paper.authors }}</span> —
+            <span class="paper-venue"><em>{{ paper.venue }}</em></span>
+            {% if paper.project %}
+              · <span class="paper-project"><a href="{{ paper.project_url | relative_url }}">{{ paper.project }}</a></span>
+            {% endif %}
+            {% if paper.video_url %}
+              · <span class="paper-video"><a href="{{ paper.video_url }}" target="_blank" rel="noopener">▶ Watch</a></span>
+            {% endif %}
+          </p>
+          {% if paper.note %}<p class="paper-abstract">{{ paper.note }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
 </article>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.view-toggle button');
+    var panels = document.querySelectorAll('.view-panel');
+
+    function activate(target) {
+      buttons.forEach(function (b) {
+        var isMatch = b.getAttribute('data-target') === target;
+        b.classList.toggle('is-active', isMatch);
+        b.setAttribute('aria-selected', isMatch);
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle('is-active', p.id === target);
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        activate(b.getAttribute('data-target'));
+      });
+    });
+
+    if (window.location.hash === '#timeline') {
+      activate('view-timeline');
+    }
+  })();
+</script>

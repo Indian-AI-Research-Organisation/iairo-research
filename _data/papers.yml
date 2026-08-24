@@ -112,9 +112,25 @@ papers:
           url: "https://arxiv.org/abs/2408.04423"
           abstract: "Unifies vision-language navigation and dialogue-based text generation in a single framework, enabling agents to communicate and navigate simultaneously. The model generates natural language descriptions of navigation actions and reasons about multimodal context to improve embodied understanding."
 
+  pharma-manufacturing:
+    - year: 2026
+      items:
+        - title: "CausalPulse: An Industrial-Grade Neurosymbolic Multi-Agent Copilot for Causal Diagnostics in Smart Manufacturing"
+          authors: "Shyalika, C., Jaimini, U., Henson, C. and Sheth, A."
+          venue: "AAAI MAKE Spring Symposium, 2026"
+
+        - title: "IndustryAssetEQA: A Neurosymbolic Operational Intelligence System for Embodied Question Answering in Industrial Asset Maintenance"
+          authors: "Shyalika, C., Patel, D.C. and Sheth, A."
+          venue: "64th Annual Meeting of the Association for Computational Linguistics (ACL 2026) — Industry Track"
+
   enterprise-ai:
   foundation-ai:
   sustainability:
+    - year: 2026
+      items:
+        - title: "AI-enabled water resilience: Applications and future directions"
+          authors: "Niyogi, D., Tiwari, A., Patel, A. and Neupane, B."
+          venue: "Global Environmental Issues, Vol. 7: AI and Environment (pp. 51–64), Korea Environment Institute, 2026"
 
 # Usage in Jekyll:
 # {% for year in site.data.papers.papers[project_id] | sort | reverse %}

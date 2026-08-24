@@ -80,11 +80,11 @@
         <div class="sidebar-box">
           <h2>Navigation</h2>
           <ul>
-            <li><a href="{{ '/' | relative_url }}">Main Page</a></li>
+            <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="is-current" aria-current="page"{% endif %}>Main Page</a></li>
             <li><a href="{{ '/' | relative_url }}#projects-and-themes">Projects and Themes</a></li>
             <li><a href="{{ '/' | relative_url }}#active-projects">Active Projects</a></li>
             <li><a href="{{ '/' | relative_url }}#archived-projects">Archived Projects</a></li>
-            <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+            <li><a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="is-current" aria-current="page"{% endif %}>Publications</a></li>
           </ul>
         </div>
         <div class="sidebar-box">
