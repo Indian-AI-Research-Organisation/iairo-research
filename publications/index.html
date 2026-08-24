@@ -25,7 +25,9 @@ title: Publications
       <ul>
         {% for project in site.projects %}
           {% assign paper_key = project.paper_key | default: project.slug %}
-          <li><a href="#{{ paper_key }}">{{ project.title }}</a></li>
+          {% if site.data.papers.papers[paper_key] %}
+            <li><a href="#{{ paper_key }}">{{ project.title }}</a></li>
+          {% endif %}
         {% endfor %}
         {% for group in site.data.papers.papers %}
           {% assign key = group[0] %}
@@ -43,14 +45,14 @@ title: Publications
       {% assign paper_key = project.paper_key | default: project.slug %}
       {% assign project_papers = site.data.papers.papers[paper_key] %}
 
-      <section id="{{ paper_key }}">
-        <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
-        <p>
-          {% if project.area %}{{ project.area }}{% endif %}
-          {% if project.duration %} · {{ project.duration }}{% endif %}
-        </p>
+      {% if project_papers %}
+        <section id="{{ paper_key }}">
+          <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+          <p>
+            {% if project.area %}{{ project.area }}{% endif %}
+            {% if project.duration %} · {{ project.duration }}{% endif %}
+          </p>
 
-        {% if project_papers %}
           {% assign by_year = project_papers | sort: 'year' | reverse %}
           {% for year_block in by_year %}
             <h3>{{ year_block.year }}</h3>
@@ -78,10 +80,8 @@ title: Publications
               {% endfor %}
             </div>
           {% endfor %}
-        {% else %}
-          <p>No publications listed yet for this project.</p>
-        {% endif %}
-      </section>
+        </section>
+      {% endif %}
     {% endfor %}
 
     {% for group in site.data.papers.papers %}
@@ -92,7 +92,7 @@ title: Publications
         {% if project_papers %}
           <section id="{{ key }}">
             <h2>{% include paper-key-label.html key=key %}</h2>
-            <p>Not yet tied to a project page.</p>
+            <p>Some of our other important works.</p>
 
             {% assign by_year = project_papers | sort: 'year' | reverse %}
             {% for year_block in by_year %}
@@ -129,35 +129,57 @@ title: Publications
   </div>
 
   <div class="view-panel" id="view-timeline" role="tabpanel">
-    {% assign papers = site.data.timeline | sort: 'date' | reverse %}
-    {% assign current_year = "" %}
+    {% comment %} Derived from papers.yml — collect every distinct year across all projects, descending. {% endcomment %}
+    {% assign years_str = "" %}
+    {% for group in site.data.papers.papers %}
+      {% for year_block in group[1] %}
+        {% assign years_str = years_str | append: year_block.year | append: "," %}
+      {% endfor %}
+    {% endfor %}
+    {% assign years = years_str | split: "," | uniq | sort | reverse %}
+
     <div class="papers-list">
-      {% for paper in papers %}
-        {% assign paper_year = paper.date | slice: 0, 4 %}
-        {% if paper_year != current_year %}
-          {% assign current_year = paper_year %}
-          <h2>{{ paper_year }}</h2>
-        {% endif %}
-        <article class="paper-entry">
-          <h3 class="paper-title">
-            {% if paper.url %}
-              <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
-            {% else %}
-              {{ paper.title }}
+      {% for y in years %}
+        <h2>{{ y }}</h2>
+        {% for group in site.data.papers.papers %}
+          {% assign project_key = group[0] %}
+          {% assign project_title = "" %}
+          {% assign project_url = "" %}
+          {% for project in site.projects %}
+            {% assign pk = project.paper_key | default: project.slug %}
+            {% if pk == project_key %}
+              {% assign project_title = project.title %}
+              {% assign project_url = project.url %}
             {% endif %}
-          </h3>
-          <p class="paper-meta">
-            <span class="paper-authors">{{ paper.authors }}</span> —
-            <span class="paper-venue"><em>{{ paper.venue }}</em></span>
-            {% if paper.project %}
-              · <span class="paper-project"><a href="{{ paper.project_url | relative_url }}">{{ paper.project }}</a></span>
+          {% endfor %}
+          {% for year_block in group[1] %}
+            {% assign yb_year = year_block.year | append: "" %}
+            {% if yb_year == y %}
+              {% for paper in year_block.items %}
+                <article class="paper-entry">
+                  <h3 class="paper-title">
+                    {% if paper.url %}
+                      <a href="{{ paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
+                    {% else %}
+                      {{ paper.title }}
+                    {% endif %}
+                  </h3>
+                  <p class="paper-meta">
+                    <span class="paper-authors">{{ paper.authors }}</span> —
+                    <span class="paper-venue"><em>{{ paper.venue }}</em></span>
+                    {% if project_title != "" %}
+                      · <span class="paper-project"><a href="{{ project_url | relative_url }}">{{ project_title }}</a></span>
+                    {% endif %}
+                    {% if paper.video_url %}
+                      · <span class="paper-video"><a href="{{ paper.video_url }}" target="_blank" rel="noopener">▶ Watch</a></span>
+                    {% endif %}
+                  </p>
+                  {% if paper.abstract %}<p class="paper-abstract">{{ paper.abstract }}</p>{% endif %}
+                </article>
+              {% endfor %}
             {% endif %}
-            {% if paper.video_url %}
-              · <span class="paper-video"><a href="{{ paper.video_url }}" target="_blank" rel="noopener">▶ Watch</a></span>
-            {% endif %}
-          </p>
-          {% if paper.note %}<p class="paper-abstract">{{ paper.note }}</p>{% endif %}
-        </article>
+          {% endfor %}
+        {% endfor %}
       {% endfor %}
     </div>
   </div>

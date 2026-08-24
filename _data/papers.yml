@@ -3,115 +3,6 @@
 # To add: Uncomment and fill in details
 
 papers:
-  pal:
-    - year: 2026
-      items:
-        - title: "PAL: Personal Adaptive Learner"
-          authors: "Megha Chakraborty, Darssan L. Eswaramoorthi, Madhur Thareja, Het Riteshkumar Shah, Finlay Palmer, Aryaman Bahl, Michelle A. Ihetu, Amit Sheth"
-          venue: "AAAI Demo, 2026"
-          url: "https://arxiv.org/abs/2604.13017"
-          abstract: "PAL is an AI-powered platform that transforms lecture videos into interactive learning experiences by adapting question difficulty in real time and generating personalized summaries."
-
-  vlm-alignment-safety-mmkg:
-    - year: 2025
-      items:
-        - title: "The Visual Counter Turing Test (VCT²): A Benchmark for Evaluating AI-Generated Image Detection and the Visual AI Index (V_AI)"
-          authors: "Imanpour, Borah, Bajpai, Ghosh, Sankepally, Abdullah, Kosaraju, Dixit, Aziz, Biswas, Jain, Chadha, Wang, Sheth, Das"
-          venue: "IJCNLP-AACL 2025"
-          url: "https://arxiv.org/abs/2411.16754"
-          abstract: "Introduces a 166K-image benchmark across six state-of-the-art text-to-image systems to stress-test AI-generated image detectors. Reveals that 17 leading detection models achieve only ~58% accuracy in zero-shot settings, exposing a critical generalization gap and motivating the Visual AI Index (V_AI) as a standardized detectability metric."
-
-        - title: "AAAI 2025 Tutorial: Hallucination in Large Multimodal Models"
-          authors: "Rawte, Chadha, Sheth, Das"
-          venue: "AAAI 2025"
-          url: "https://vr25.github.io/aaai25-hallucination-tutorial/"
-          abstract: "A full-day tutorial covering hallucination theory, detection, and mitigation across text, image, and video modalities, with practical black-box and gray-box techniques. Bridges the gap between emerging research and deployment, drawing directly from the group's ViBe, VCT², and survey work."
-
-    - year: 2024
-      items:
-        - title: "ViBe: A Text-to-Video Benchmark for Evaluating Hallucination in Large Multimodal Models"
-          authors: "Rawte, Jain, Sinha, Kaushik, Bansal, Vishwanath, Jain, Reganti, Jain, Chadha, Sheth, Das"
-          venue: "arXiv 2024"
-          url: "https://arxiv.org/abs/2411.10867"
-          abstract: "The first large-scale benchmark specifically for hallucination in text-to-video generation, covering 3,782 human-annotated videos from ten T2V models. Defines five hallucination types — Vanishing Subject, Omission Error, Numeric Variability, Subject Dysmorphia, and Visual Incongruity — and establishes classifier baselines for automated detection."
-
-        - title: "A Comprehensive Survey of Hallucination Mitigation Techniques in Large Language Models"
-          authors: "Tonmoy, Zaman, Jain, Rani, Rawte, Chadha, Das"
-          venue: "arXiv 2024"
-          url: "https://arxiv.org/abs/2401.01313"
-          abstract: "Systematically reviews over 30 mitigation techniques spanning decoding strategies, retrieval augmentation, self-consistency methods, and fine-tuning approaches. Provides a practical taxonomy for practitioners selecting mitigation strategies based on deployment constraints."
-
-        - title: '"Sorry, Come Again?" Prompting — Enhancing Comprehension and Diminishing Hallucination with [PAUSE]-Injected Optimal Paraphrasing'
-          authors: "Rawte, Tonmoy, Zaman, Priya, Chadha, Sheth, Das"
-          venue: "arXiv 2024"
-          url: "https://arxiv.org/abs/2403.18976"
-          abstract: "Proposes injecting deliberate [PAUSE] tokens into prompts alongside optimal paraphrasing to reduce comprehension failures and hallucination without any model retraining. Demonstrates consistent gains across multiple LLMs on factuality benchmarks, offering a lightweight inference-time intervention."
-
-        - title: "FACTOID: Factual Entailment for Hallucination Detection"
-          authors: "Rawte, Tonmoy, Rajbangshi, Nag, Chadha, Sheth, Das"
-          venue: "arXiv 2024"
-          url: "https://arxiv.org/abs/2403.19113"
-          abstract: "Frames hallucination detection as a factual entailment problem, using long-context embeddings and multi-task learning to identify unsupported claims in model outputs. Achieves a 40% average accuracy improvement over leading textual entailment baselines on the FACTOID benchmark."
-
-        - title: "A Survey of Hallucination in Large Foundation Models"
-          authors: "Rawte, Sheth, Das"
-          venue: "arXiv 2024"
-          url: "https://arxiv.org/abs/2309.05922"
-          abstract: "A broad survey covering hallucination phenomena across language, vision, and multimodal foundation models. Synthesizes causes, detection methods, and mitigation approaches into a unified framework applicable across modalities."
-
-        - title: "Visual Causal Question Answering with Knowledge Graph Link Prediction"
-          authors: "Jaimini, Henson, Sheth"
-          venue: "AIISC 2024"
-          url: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1634&context=aii_fac_pub"
-          abstract: "Grounds visual question answering in causal knowledge graphs by treating answer inference as a link prediction problem over a structured scene representation. This approach improves explainability and reduces spurious correlations that purely neural VQA models rely on."
-
-        - title: "Causal Knowledge Graph for Scene Understanding in Autonomous Driving"
-          authors: "Jaimini, Henson, Sheth"
-          venue: "AIISC 2024"
-          url: "https://ceur-ws.org/Vol-3828/paper43.pdf"
-          abstract: "Builds causal knowledge graphs from driving scenes to provide structured, causally-grounded representations for autonomous perception systems. Addresses reliability gaps in neural scene understanding by encoding object relationships and causal dependencies explicitly rather than learning them implicitly from data."
-
-    - year: 2023
-      items:
-        - title: "The Troubling Emergence of Hallucination in Large Language Models — An Extensive Definition, Quantification, and Prescriptive Remediations"
-          authors: "Rawte, Chakraborty, Pathak, Sarkar, Tonmoy, Chadha, Sheth, Das"
-          venue: "EMNLP 2023"
-          url: "https://arxiv.org/abs/2310.04988"
-          abstract: "Offers the first fine-grained taxonomy of LLM hallucination organized by degree (mild, moderate, alarming), orientation (factual mirage vs. silver lining), and intrinsic vs. extrinsic type. Goes beyond detection to prescribe targeted remediation strategies for each hallucination category."
-
-        - title: "Exploring the Relationship between LLM Hallucinations and Prompt Linguistic Nuances: Readability, Formality, and Concreteness"
-          authors: "Rawte, Priya, Tonmoy, Zaman, Sheth, Das"
-          venue: "arXiv 2023"
-          url: "https://arxiv.org/abs/2309.11064"
-          abstract: "Empirically investigates how surface-level prompt properties — readability level, formality register, and noun concreteness — affect hallucination rates in LLMs. Finds that low-readability and highly abstract prompts consistently increase hallucination, with implications for prompt engineering and safety evaluation."
-
-        - title: "IMAGINATOR: Pre-Trained Image+Text Joint Embeddings using Word-Level Grounding of Images"
-          authors: "Krishna, Suryavardan, Mishra, Ramamoorthy, Patwa, Chakraborty, Chadha, Das, Sheth"
-          venue: "ICON 2023"
-          url: "https://arxiv.org/abs/2305.10438"
-          abstract: "Extends the distributional hypothesis to the visual modality by training joint image+text embeddings on 1M image-text pairs at the object level. IMAGINATOR captures object-object co-location, word-object co-location, and word-object correlation — enabling visual analogy reasoning that convolution-based embeddings like VGGNet cannot perform."
-
-        - title: "Counter Turing Test (CT²): AI-Generated Text Detection is Not as Easy as You May Think — Introducing AI Detectability Index (ADI)"
-          authors: "Chakraborty, Tonmoy, Zaman, Gautam, Kumar, Sharma, Barman, Gupta, Jain, Chadha, Sheth, Das"
-          venue: "EMNLP 2023"
-          url: "https://arxiv.org/abs/2310.05030"
-          abstract: "Challenges the assumption that current AI-generated text detectors are reliable, systematically showing that state-of-the-art methods fail under distributional shift. Introduces the AI Detectability Index (ADI) as a standardized metric for measuring how detectable a given model's outputs are — the textual precursor to VCT²."
-
-  embodied-ai:
-    - year: 2026
-      items:
-        - title: "AIGen: An Adversarial Approach for Instruction Generation in Vision-Language Navigation"
-          authors: "Rawal, Niyati, Roberto Bigazzi, Lorenzo Baraldi, Rita Cucchiara"
-          venue: "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024"
-          url: "https://arxiv.org/abs/2404.09435"
-          abstract: "Proposes an adversarial framework for generating diverse, contextually appropriate instructions in vision-language navigation tasks. AIGen leverages instruction generation to create varied training signals that improve agent robustness and generalization to unseen environments."
-
-        - title: "UNMuTe: Unifying Navigation and Multimodal Dialogue-like Text Generation"
-          authors: "Rawal, Niyati, Roberto Bigazzi, Lorenzo Baraldi, Rita Cucchiara"
-          venue: "arXiv 2024"
-          url: "https://arxiv.org/abs/2408.04423"
-          abstract: "Unifies vision-language navigation and dialogue-based text generation in a single framework, enabling agents to communicate and navigate simultaneously. The model generates natural language descriptions of navigation actions and reasons about multimodal context to improve embodied understanding."
-
   pharma-manufacturing:
     - year: 2026
       items:
@@ -131,6 +22,43 @@ papers:
         - title: "AI-enabled water resilience: Applications and future directions"
           authors: "Niyogi, D., Tiwari, A., Patel, A. and Neupane, B."
           venue: "Global Environmental Issues, Vol. 7: AI and Environment (pp. 51–64), Korea Environment Institute, 2026"
+
+  others:
+    - year: 2026
+      items:
+        - title: "SOFAI-DT: Return-Conditioned Control for Efficient Verified Reasoning"
+          authors: "Rahul Maity, Vedant Khandelwal, Amit Sheth"
+          venue: "COLM 2026 Workshop on Efficient Reasoning"
+
+        - title: "MED-EVAL: Clinical Fact Alignment for Efficient Medical Reasoning"
+          authors: "Rishit Agarwal, Vedant Khandelwal, Amit Sheth"
+          venue: "COLM 2026 Workshop on Efficient Reasoning"
+
+        - title: "Neuro-symbolic PRM: Enhancing Scientific Reasoning via Structured Traces and Symbolic Verification"
+          authors: "Zi, Y., Xu, C., Bhattacharya, S., Foltin, M., Sheth, A."
+          venue: "Third Conference on Language Modeling (COLM 2026)"
+
+        - title: "Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement"
+          authors: "R. Marwah, R. Garimella, V. Pallagani, A. Jain, M. Stewart, A. Sheth"
+          venue: "43rd International Conference on Machine Learning (ICML 2026), Seoul, South Korea"
+
+        - title: "One Size Does Not Fit All: Revisiting World Models and Neurosymbolic AI"
+          authors: "Amit Sheth, Madhur Thareja, Anushka Pawar, Niyati Rawal"
+          venue: "ACM AI Leadership Summit (Visionary papers), 2026"
+
+        - title: "LiveSpec: A Tiered Runtime for Planning under Live-Editable Constraints"
+          authors: "Vedant Khandelwal, Prateek Biswas, Amit Sheth"
+          venue: "ICAPS 2026"
+
+        - title: "Where Should Knowledge Enter? A Layered Framework for Knowledge Infusion in Multimodal Iterative Generative Model"
+          authors: "Renjith Prasad, Chathurangi Shyalika, Anushka Pawar, Amit Sheth"
+          venue: "2nd Workshop on Knowledge-Intensive Multimodal Reasoning, CVPR 2026"
+          url: "https://arxiv.org/abs/2606.06356"
+          abstract: "To be published in IEEE Intelligent Systems."
+
+        - title: "Toward Neurosymbolic Reinforcement Learning via Editable Specifications"
+          authors: "Vedant Khandelwal, Hong Yung Yip, Amit Sheth"
+          venue: "AAAI MAKE Spring Symposium, Proceedings of the AAAI Symposium Series, Vol. 8, No. 1, pp. 603–607, 2026"
 
 # Usage in Jekyll:
 # {% for year in site.data.papers.papers[project_id] | sort | reverse %}
