@@ -30,6 +30,11 @@ papers:
   others:
     - year: 2026
       items:
+        - title: Abstention vs. Hallucination: Benchmarking LLM Source Attribution for Scientific Citations
+          authors: Deepa Tilwani, Yash Saxena, Seyedali Mohammadi, Ankur Padia, Edward Raff, Amit Sheth, Srinivasan Parthasarathy, Manas Gaur
+          url: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e9f3e663-97d4-44bc-bbe8-74a76a5b5511"
+          video_url: "https://youtu.be/e4rm2gf9uvQ?si=l-mBigW9Yhv4fyIg"
+          
         - title: "SOFAI-DT: Return-Conditioned Control for Efficient Verified Reasoning"
           authors: "Rahul Maity, Vedant Khandelwal, Amit Sheth"
           venue: "COLM 2026 Workshop on Efficient Reasoning"
