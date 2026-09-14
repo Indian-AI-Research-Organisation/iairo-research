@@ -30,7 +30,7 @@ papers:
   others:
     - year: 2026
       items:
-        - title: Abstention vs. Hallucination: Benchmarking LLM Source Attribution for Scientific Citations
+        - title: "Abstention vs. Hallucination: Benchmarking LLM Source Attribution for Scientific Citations"
           authors: Deepa Tilwani, Yash Saxena, Seyedali Mohammadi, Ankur Padia, Edward Raff, Amit Sheth, Srinivasan Parthasarathy, Manas Gaur
           url: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e9f3e663-97d4-44bc-bbe8-74a76a5b5511"
           video_url: "https://youtu.be/e4rm2gf9uvQ?si=l-mBigW9Yhv4fyIg"
