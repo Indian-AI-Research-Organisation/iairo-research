@@ -20,6 +20,15 @@ papers:
 
   enterprise-ai:
   foundation-ai:
+  nidhi-suicide-risk-detection:
+    - year: 2026
+      items:
+        - title: "Bag of Tricks or Bag of Myths? Reducing Modeling Complexity with Task Knowledge in Explainable Suicide Risk Assessment"
+          authors: "Shlok Shelat, Shrey Salvi, Souvik Roy, Manas Gaur, Amit Sheth"
+          venue: "IEEE BigData 2026 Cup — Explainable Suicide Risk Detection (Competition Report); 1st place, 55 teams"
+          url: "https://arxiv.org/abs/2609.07766"
+          abstract: "Competition report for the NIDHI team's 1st-place system in the IEEE BigData 2026 Cup. Audits 31 standard NLP techniques from 7 methodological families across ~300 controlled experiments on 1,635 clinician-annotated posts, finding only 5 reliably improve small-data, multi-output suicide-risk assessment. A full paper is in preparation for the IEEE BigData 2026 submission deadline."
+
   sustainability:
     - year: 2026
       items:
