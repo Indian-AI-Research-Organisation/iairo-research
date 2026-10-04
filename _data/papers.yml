@@ -20,6 +20,22 @@ papers:
 
   enterprise-ai:
   foundation-ai:
+  medha-autoformalisation:
+    - year: 2026
+      items:
+        - title: "SEMINAR: Synchronization Engine for Mathematical Illustration, Narration, and Reasoning"
+          authors: "Rishov Mondal, Amit Sheth"
+          venue: "6th MATH-AI Workshop at NeurIPS 2026"
+          url: "https://openreview.net/forum?id=Hok64VGQC0"
+
+  embodied-ai:
+    - year: 2026
+      items:
+        - title: "Answering Without Arriving: An Evidence Audit for Embodied Question Answering"
+          authors: "Shubh Garg, Divyansh Pandey, Niyati Rawal, Vedant Khandelwal, Amit Sheth"
+          venue: "NeurIPS 2026 Workshop on Neuro-Symbolic Embodied Intelligence"
+          url: "https://openreview.net/forum?id=kxFasiys7j"
+
   nidhi-suicide-risk-detection:
     - year: 2026
       items:
@@ -67,6 +83,7 @@ papers:
         - title: "One Size Does Not Fit All: Revisiting World Models and Neurosymbolic AI"
           authors: "Amit Sheth, Madhur Thareja, Anushka Pawar, Niyati Rawal"
           venue: "ACM AI Leadership Summit (Visionary papers), 2026"
+          url: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1659&context=aii_fac_pub"
 
         - title: "LiveSpec: A Tiered Runtime for Planning under Live-Editable Constraints"
           authors: "Vedant Khandelwal, Prateek Biswas, Amit Sheth"
@@ -86,6 +103,11 @@ papers:
           venue: "AAAI MAKE Spring Symposium, Proceedings of the AAAI Symposium Series, Vol. 8, No. 1, pp. 603–607, 2026"
           url: "https://ojs.aaai.org/index.php/AAAI-SS/article/view/42594"
           video_url: "https://youtu.be/fooU6YoNUFs"
+
+        - title: "CAMEO: A Black-Box Behavioral Diagnostic for Evaluation-Aware Concealment in Language Models"
+          authors: "Vatsalya Soni, Shaivi Malik, Vedant Maheshwari, Venkatesan Nadimuthu, Yash Kulkarni, Amit Sheth"
+          venue: "NeurIPS 2026 Workshop on Trustworthy AI for Good (AI4Good)"
+          url: "https://openreview.net/pdf?id=itYzOWHzFH"
 
 # Usage in Jekyll:
 # {% for year in site.data.papers.papers[project_id] | sort | reverse %}
