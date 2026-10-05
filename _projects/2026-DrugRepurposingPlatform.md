@@ -1,11 +1,13 @@
 ---
-title: “Drug Repurposing Platform”
-summary : A neurosymbolic drug-repurposing framework that integrates multiple biomedical knowledge graphs into a unified representation. It combines KG-based retrieval and SPARQL/Cypher querying with GNN-based link prediction to identify both known and novel drug–disease associations. Candidate predictions are ranked using evidence from the KG and accompanied by reasoning paths, provenance, confidence scores, and human-readable explanations.
-Area: Pharma, Drug Repurposing, Knowledge Graphs
+title: Drug Repurposing Platform
+summary: A neurosymbolic drug-repurposing framework that integrates multiple biomedical knowledge graphs into a unified representation. It combines KG-based retrieval and SPARQL/Cypher querying with GNN-based link prediction to identify both known and novel drug–disease associations. Candidate predictions are ranked using evidence from the KG and accompanied by reasoning paths, provenance, confidence scores, and human-readable explanations.
+area: AI in Pharma
 status: active
-featured: false
+featured: true
 duration: 2026 - Present
-Contact: madhur.thareja@iairo.ai
+order: 20
+paper_key: drug-repurposing
+contact: madhur.thareja@iairo.ai
 ---
 
 Project Motive
