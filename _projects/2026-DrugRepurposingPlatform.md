@@ -1,6 +1,6 @@
 ---
 title: Drug Repurposing Platform
-summary: A neurosymbolic drug-repurposing framework that integrates multiple biomedical knowledge graphs into a unified representation. It combines KG-based retrieval and SPARQL/Cypher querying with GNN-based link prediction to identify both known and novel drug–disease associations. Candidate predictions are ranked using evidence from the KG and accompanied by reasoning paths, provenance, confidence scores, and human-readable explanations.
+summary: A neurosymbolic drug-repurposing framework that integrates heterogeneous biomedical knowledge graphs into a unified knowledge representation. The framework combines symbolic KG retrieval through SPARQL/Cypher with sAIM-based GNN link prediction to identify both established and potentially novel drug–disease associations. Candidate associations are ranked by combining KG-derived evidence with predictive confidence, while each prediction is accompanied by supporting reasoning paths, provenance, confidence scores, and human-readable explanations to enable transparent and interpretable drug-repurposing decisions.
 area: AI in Pharma
 status: active
 featured: true
