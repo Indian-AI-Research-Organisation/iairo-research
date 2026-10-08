@@ -1,16 +1,16 @@
 ---
 title: "Context Preservation in Long-Form Video Generation via Scene Graphs"
-summary: Scene-graph-conditioned video continuation to reduce context drift, hallucination, and identity loss in long-form generation.
+summary: A scene graph built from each generated chunk gives a video generator an object-level memory, so identities and relations hold up over long videos.
 area: Computer Vision / Video Generation
 status: active
 featured: false
 duration: 2026 - Present
 order: 20
 paper_key: context-preservation-scene-graphs
-contact: anushka.pawar@iairo.ai
+contact: anushka.pawar@iairo.ai, madhur.thareja@iairo.ai
 ---
 
-This project investigates video continuation for long-form generation by using scene graphs as a training-free structural anchor. The goal is to reduce exposure-bias-driven drift, preserve object identity, and maintain relational consistency across continuously generated frames.
+ Long videos are generated chunk by chunk, and each chunk sees only a short window of what came before. Objects that leave the frame are forgotten and errors compound. After each chunk, a perception pipeline records what is in it (objects, attributes, actions, relations) as a scene graph. That graph is fed back to the generator as context for the next chunk.
 
 ## Project Motive
 
@@ -18,19 +18,16 @@ Autoregressive and diffusion-based video models often drift over time because th
 
 ## Method
 
-- Extract scene graphs from reference frames using ImPartial, extending the structural ideas behind DiffVSGG.
-- Translate discrete graph nodes and edges into continuous embeddings with GNN-based encoders.
-- Inject the graph representation into Wan 2.1 (1.3B) through cross-attention LoRA modules while freezing the base model weights.
-- Use the graph-conditioned latent representation to guide video continuation and preserve spatial and relational logic.
+- A frozen Wan2.1-T2V-1.3B video generator (Self-Forcing) reads the graph as extra tokens alongside the text prompt.
+- Only the graph encoder and the adapters that connect it to the generator are trained.
+- Training is two phases: first on real video chunks, then on the model's own long generations.
+
 
 ## Evaluation
 
 The project will be evaluated on a small benchmark of roughly 50 examples using:
 
-- Physics Validation / Google Physics-IQ for object permanence and spatial integrity.
-- Motion Aware Warp Error (MAWE) for motion fidelity without structural collapse.
-- Scene Cuts (SCuts) for long-range temporal consistency.
-- FVD and CLIP Score as standard visual quality and text-alignment baselines.
+- FVD, CLIP Score, VBench Subject Consistency, MAWE, drift across chunks, and Re-identification Accuracy after Dormancy (RAD), which measures whether an object is recognised after it leaves and re-enters the frame.
 
 ## Status
 

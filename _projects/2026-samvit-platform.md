@@ -8,6 +8,7 @@ duration: 2026 - Present
 order: 1
 paper_key: samvit-platform
 external_link: https://www.linkedin.com/pulse/c3an-custom-compact-composite-ai-systems-approach-evolution-sheth-hcvze
+contact: aditya.patel@iairo.ai, madhur.thareja@iairo.ai
 ---
 
 SAMVIT is IAIRO's sovereign AI platform for small AI, as opposed to big AI represented by large language models. It sits atop AI infrastructure such as IndiaAI Infrastructure and compact, desktop-class AI supercomputers, enabling frugal development and operation of specialized foundational models.
