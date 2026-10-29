@@ -59,7 +59,7 @@ papers:
           authors: Deepa Tilwani, Yash Saxena, Seyedali Mohammadi, Ankur Padia, Edward Raff, Amit Sheth, Srinivasan Parthasarathy, Manas Gaur
           url: "https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:e9f3e663-97d4-44bc-bbe8-74a76a5b5511"
           video_url: "https://youtu.be/e4rm2gf9uvQ?si=l-mBigW9Yhv4fyIg"
-          
+
         - title: "SOFAI-DT: Return-Conditioned Control for Efficient Verified Reasoning"
           authors: "Rahul Maity, Vedant Khandelwal, Amit Sheth"
           venue: "COLM 2026 Workshop on Efficient Reasoning"
@@ -108,6 +108,44 @@ papers:
           authors: "Vatsalya Soni, Shaivi Malik, Vedant Maheshwari, Venkatesan Nadimuthu, Yash Kulkarni, Amit Sheth"
           venue: "NeurIPS 2026 Workshop on Trustworthy AI for Good (AI4Good)"
           url: "https://openreview.net/pdf?id=itYzOWHzFH"
+
+        - title: "SAAG: Structured Agent Assessment and Grounding"
+          authors: "Ritvik Garimella, Vedant Khandelwal, Anvi Kohli, Amit Sheth"
+          venue: "KnowFM Workshop, ACL 2026"
+          url: "https://arxiv.org/abs/2607.18245"
+
+        - title: "Doing Less with More: A First-Principles Exploration of the Suitability of Agentic Computing over Alternative Architectural Choices"
+          authors: "Ritvik Garimella, Biplav Srivastava, Amit Sheth"
+          venue: "Trustworthy Agentic Systems (TAS), AAAI Fall Symposium 2026"
+          url: "https://arxiv.org/abs/2610.23921"
+
+        - title: "Context Matters: Evaluating LLM-Generated Knowledge Graph Schemas"
+          authors: "Ritvik Garimella, Riju Marwah, Khusham Bansal, Atishay Jain, Amit Sheth"
+          venue: "AI Trustworthiness and Risk Assessment for Challenged Contexts (ATRACC), AAAI Fall Symposium 2026"
+          url: "https://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1664&context=aii_fac_pub"
+
+        - title: "Fatigue-Resistant Post-Training: Mitigating Cognitive Fatigue in Autoregressive Transformers via FI-Guided Optimization"
+          authors: "Ritvik Garimella, Riju Marwah, Khusham Bansal, Atishay Jain, Amit Sheth"
+          venue: "AI Trustworthiness and Risk Assessment for Challenged Contexts (ATRACC), AAAI Fall Symposium 2026"
+
+        - title: "Output Language Confusion under Multilingual Prompt Contamination"
+          authors: "Riju Marwah, Ritvik Garimella, Khusham Bansal, Atishay Jain, Amit Sheth"
+          venue: "LP4FM Workshop, NeurIPS 2026"
+          url: "https://arxiv.org/abs/2610.02926"
+
+        - title: "Navigate, Don’t Generate: Making AI Mediated Access to Public Agricultural Data Citizen-Auditable"
+          authors: "Pranav Dhiran, Venkatesan Nadimuthu, Vedant Maheshwari, Raviteja Bommireddy, Mitanshu Khandal, Archy Das, Anmol Nimmala, Amit Sheth"
+          venue: "AI4GOOD Workshop, NeurIPS 2026"
+          url: "https://openreview.net/forum?id=mSc2Zx13f6"
+
+        - title: "RP: Auditing Process Knowledge for Parsimonious and Explainable Industrial Cyberattack Detection"
+          authors: "Kim, H., Wilkinson, K., Prasad, R., Rathod, A., Shyalika, C. and Sheth, A."
+          venue: "Proceedings of the AAAI Fall Symposium Series 2026"
+
+        - title: "House Rules: A Benchmark for Agents under Changing Requirements"
+          authors: "Rahul Vimalkanth, Harsh Sharma, Vedant Khandelwal, Amit Sheth"
+          venue: "Neuro-Symbolic Embodied Intelligence (NEmo) Workshop, NeurIPS 2026 (Oral Presentation)"
+          url: "https://openreview.net/forum?id=plGCWNnOZh"
 
 # Usage in Jekyll:
 # {% for year in site.data.papers.papers[project_id] | sort | reverse %}
